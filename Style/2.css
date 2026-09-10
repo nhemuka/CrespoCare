@@ -1,0 +1,393 @@
+/* Reset e Tipografia */
+/* Cabeçalho: Conteúdo na Esquerda, Logo na Direita */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 8%;
+}
+
+.hero-logo-lado-esquerdo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-info-lado-direito {
+    flex: 1.5;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #faf4ee;
+    color: #2b1a10;
+    line-height: 1.6;
+}
+
+/* Header e Menu Responsivo */
+header {
+    background-color: #3b1e08;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #d4a373;
+}
+
+header h1 {
+    color: #f3c4fb;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style-type: none; /* Remove marcas de lista */
+    display: flex; /* Coloca os itens lado a lado */
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #d4a373;
+    color: #3b1e08;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #5c2a08;
+    border-bottom: 2px solid #d4a373;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Botão Estilizado */
+.btn-afro {
+    display: inline-block;
+    background-color: #8b3a0e;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-afro:hover {
+    background-color: #5c2a08;
+}
+
+/* Tabela Estilizada */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #e2d4e0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8eaf4;
+    color: #5c2a08;
+}
+
+/* Mídias */
+img, iframe {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3b1e08;
+    color: #d4a373;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #f3c4fb;
+}
+/* --- ESTILO DO CARROSSEL DE IMAGENS --- */
+.carrossel-container {
+    display: flex;                  /* Coloca os cartões lado a lado */
+    gap: 30px;                     /* Espaço entre cada imagem */
+    overflow-x: auto;              /* Permite deslizar para os lados */
+    padding: 10px 5px 20px 5px;
+    scroll-snap-type: x mandatory;  /* Faz a imagem "encaixar" ao deslizar */
+    scroll-behavior: smooth;       /* Movimento suave */
+}
+
+/* Personalização da barra de rolagem do carrossel */
+.carrossel-container::-webkit-scrollbar {
+    height: 8px;
+}
+.carrossel-container::-webkit-scrollbar-thumb {
+    background: #d4a373;
+    border-radius: 10px;
+}
+
+/* Cartões Individuais do Carrossel */
+.carrossel-item {
+    flex: 0 0  300px;               /* Largura fixa para cada cartão */
+    scroll-snap-align: start;       /* Ponto de alinhamento ao deslizar */
+    background-color: #faf4ee;
+    border: 1px solid #d4a373;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 1s ease;
+}
+
+.carrossel-item:hover {
+    transform: translateY(-5px);    /* Efeito visual ao passar o rato */
+}
+
+.carrossel-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;             /* Mantém a proporção da imagem sem distorcer */
+    display: block;
+}
+
+.carrossel-item p {
+    padding: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #3b1e08;
+}
+/* Definição de tamanho e espaço para as fotos do carrossel */
+.carrossel-item img {
+    width: 100%;
+    height: 220px;          /* Define a altura fixa da foto */
+    object-fit: cover;      /* Recorta suavemente a imagem sem a distorcer/esticar */
+    display: block;
+}
+/* --- HERO SECTION MODERNA --- */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Ocupa 80% da altura do ecrã */
+    background-image: url('angela_davis.jpg'); /* Altera para a foto de fundo que preferires */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Escurece levemente a imagem para o texto ser lido com clareza */
+.hero-overlay {
+    background: rgba(59, 30, 8, 0.65); /* Tom castanho com transparência */
+    padding: 40px;
+    margin-left: 50px;
+    max-width: 550px;
+    border-radius: 12px;
+    color: #ffffff;
+    border-left: 5px solid #d4a373;
+}
+
+.hero-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Botão de Destaque */
+.btn-hero {
+    display: inline-block;
+    background-color: #d4a373;
+    color: #3b1e08;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #f3c4fb;
+}
+/* Limita o tamanho da logo na página */
+.logo-grande, 
+.hero-logo-lado-esquerdo img {
+    max-width: 250px;       /* Controla a largura máxima */
+    width: 100%;            /* Mantém a proporção responsiva */
+    height: auto;           /* Garante que a imagem não distorça */
+    display: block;
+    margin: 0 auto;
+}
+main {
+    max-width: 1300px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+html {
+    scroll-behavior: smooth;
+}
+.btn-explorar {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #c89668;
+    color: #3b1e08;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 1px solid #3b1e08;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explorar:hover {
+    background-color: #a87548;
+    color: #ffffff;
+}
+/* --- FORMULÁRIO INTERATIVO --- */
+.form-container {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 30px;
+    border-top: 5px solid #3b1e08;
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo label {
+    font-weight: bold;
+    color: #3b1e08;
+    margin-bottom: 8px;
+}
+
+.campo-grupo input[type="text"],
+.campo-grupo input[type="email"],
+.campo-grupo select {
+    padding: 12px;
+    border: 1px solid #d4a373;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline-color: #8b3a0e;
+}
+
+.campo-duplo {
+    display: flex;
+    gap: 20px;
+}
+
+.campo-duplo .campo-grupo {
+    flex: 1;
+}
+
+.grid-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    background-color: #faf4ee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.grid-checkboxes label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Botões */
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-limpar {
+    background-color: #e2e2e2;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    background-color: #ccc;
+}
+
+/* Validação e Resultados */
+.mensagem-erro {
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.resultado-container {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #faf4ee;
+    border-left: 6px solid #d4a373;
+    border-radius: 8px;
+}
+
+.card-solucao {
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #d4a373;
+}
+
+.card-solucao h4 {
+    color: #8b3a0e;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,535 @@
+/* ==========================================================================
+   1. RESET E TIPOGRAFIA GERAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #faf4ee;
+    color: #2b1a10;
+    line-height: 1.6;
+
+    /* --- REGRA PARA FIXAR O RODAPÉ SEMPRE NA BASE DO ECRÃ --- */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa 100% da altura visível da janela */
+}
+
+/* ==========================================================================
+   4. ESTRUTURA E CONTEÚDO PRINCIPAL (MAIN & TÍTULOS)
+   ========================================================================== */
+main {
+    max-width: 1300px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+
+    /* --- EXPANDE O CONTEÚDO PRINCIPAL PARA EMPURRAR O FOOTER --- */
+    flex: 1; 
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E MENU DE NAVEGAÇÃO SUPERIOR (FIXO NO TOPO)
+   --------------------------------------------------------------------------
+   Controla a barra superior. O position: sticky faz o menu acompanhar a rolagem.
+   ========================================================================== */
+header {
+    background-color: #3b1e08;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #d4a373;
+
+    /* --- PROPRIEDADES PARA FIXAR O MENU NO TOPO --- */
+    position: sticky; /* Faz o elemento colar quando chega ao topo */
+    top: 0;           /* Define que vai colar exatamente na margem superior */
+    z-index: 1000;    /* Garante que o menu fique por cima das imagens e vídeos */
+}
+
+header h1 {
+    color: #f3c4fb;
+    font-size: 1.5rem;
+}
+
+/* Lista de Links do Menu */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo dos Links individuais do Menu */
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o rato ou na página ativa */
+nav ul li a:hover,
+nav ul li a.ativo {
+    background-color: #d4a373;
+    color: #3b1e08;
+}
+
+/* ==========================================================================
+   3. SECÇÃO PRINCIPAL (HERO SECTION / BANNER)
+   --------------------------------------------------------------------------
+   Estilos da área de destaque inicial com o logo e o título.
+   ========================================================================== */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 8%;
+}
+
+.hero-logo-lado-esquerdo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-info-lado-direito {
+    flex: 1.5;
+}
+
+/* Tamanho e proporção do Logotipo no topo */
+.logo-grande, 
+.hero-logo-lado-esquerdo img {
+    max-width: 250px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Banner de imagem de fundo com texto sobreposto (opcional) */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: url('angela_davis.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.hero-overlay {
+    background: rgba(59, 30, 8, 0.65);
+    padding: 40px;
+    margin-left: 50px;
+    max-width: 550px;
+    border-radius: 12px;
+    color: #ffffff;
+    border-left: 5px solid #d4a373;
+}
+
+.hero-overlay h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Botões da Hero */
+.btn-hero {
+    display: inline-block;
+    background-color: #d4a373;
+    color: #3b1e08;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #f3c4fb;
+}
+
+.btn-explorar {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #c89668;
+    color: #3b1e08;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 1px solid #3b1e08;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-explorar:hover {
+    background-color: #a87548;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   4. ESTRUTURA E CONTEÚDO PRINCIPAL (MAIN & TÍTULOS)
+   --------------------------------------------------------------------------
+   Caixa branca centralizada onde fica o conteúdo das páginas.
+   ========================================================================== */
+main {
+    max-width: 1300px;
+    width: 90%;
+    margin: 40px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Estilo padrão para os títulos das secções */
+h2 {
+    color: #5c2a08;
+    border-bottom: 2px solid #d4a373;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Botão principal estilizado (usado nos links do site) */
+.btn-afro {
+    display: inline-block;
+    background-color: #8b3a0e;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-afro:hover {
+    background-color: #5c2a08;
+}
+
+/* ==========================================================================
+   5. CARROSSEL DE IMAGENS (GALERIA 4A, 4B, 4C)
+   --------------------------------------------------------------------------
+   Controlo da barra de rolagem horizontal e cartões de fotos.
+   ========================================================================== */
+.carrossel-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 10px 5px 20px 5px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Personalização da barra de rolagem horizontal */
+.carrossel-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrossel-container::-webkit-scrollbar-thumb {
+    background: #d4a373;
+    border-radius: 10px;
+}
+
+/* Cartão individual do carrossel */
+.carrossel-item {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background-color: #faf4ee;
+    border: 1px solid #d4a373;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.carrossel-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Foto dentro do carrossel */
+.carrossel-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.carrossel-item p {
+    padding: 12px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #3b1e08;
+}
+
+/* ==========================================================================
+   6. MÍDIAS: VÍDEO COMPACTO E DESCRIÇÃO LADO A LADO
+   --------------------------------------------------------------------------
+   Controla o tamanho reduzido do vídeo e o alinhamento do texto à direita.
+   ========================================================================== */
+.conteudo-midia {
+    display: flex;
+    flex-wrap: wrap;        /* Permite que em telemóveis o texto vá para baixo do vídeo */
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Garante que o título do tutorial fique no topo */
+.conteudo-midia > h3 {
+    width: 100%;
+}
+
+/* LADO ESQUERDO: Dimensões e tamanho do Vídeo */
+.video-container {
+    flex: 1;
+    min-width: 280px;
+    max-width: 480px;      /* ALTERA AQUI: Ajusta o tamanho máximo do leitor de vídeo */
+}
+
+.video-container video {
+    width: 100% !important;
+    height: auto !important;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* LADO DIREITO: Caixa de texto descritivo do tutorial */
+.descricao-video {
+    flex: 1.2;
+    min-width: 280px;
+    background-color: #faf4ee;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #d4a373;
+}
+
+.descricao-video h3 {
+    color: #5c2a08;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.descricao-tutorial {
+    color: #2b1a10;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+img, iframe {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   7. TABELAS (GUIA CRESPO)
+   --------------------------------------------------------------------------
+   Estilização da tabela de curvaturas e tratamentos.
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #e2d4e0;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8eaf4;
+    color: #5c2a08;
+}
+
+/* ==========================================================================
+   8. FORMULÁRIO E DIAGNÓSTICO CAPILAR
+   --------------------------------------------------------------------------
+   Campos de texto, botões, checkboxes e caixa de resultados.
+   ========================================================================== */
+.form-container {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-top: 30px;
+    border-top: 5px solid #3b1e08;
+}
+
+.campo-grupo {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo label {
+    font-weight: bold;
+    color: #3b1e08;
+    margin-bottom: 8px;
+}
+
+.campo-grupo input[type="text"],
+.campo-grupo input[type="email"],
+.campo-grupo select {
+    padding: 12px;
+    border: 1px solid #d4a373;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline-color: #8b3a0e;
+}
+
+.campo-duplo {
+    display: flex;
+    gap: 20px;
+}
+
+.campo-duplo .campo-grupo {
+    flex: 1;
+}
+
+/* Grelha para as seleções de opções (Checkboxes) */
+.grid-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    background-color: #faf4ee;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.grid-checkboxes label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Botões do Formulário */
+.botoes-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-limpar {
+    background-color: #e2e2e2;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    background-color: #ccc;
+}
+
+.mensagem-erro {
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Caixa onde aparece a solução gerada pelo Diagnóstico */
+.resultado-container {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #faf4ee;
+    border-left: 6px solid #d4a373;
+    border-radius: 8px;
+}
+
+.card-solucao {
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: 1px solid #d4a373;
+}
+
+.card-solucao h4 {
+    color: #8b3a0e;
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================================================
+   9. RODAPÉ (FOOTER E ÁREA ACADÉMICA)
+   --------------------------------------------------------------------------
+   Mesmas cores do Header: Fundo #3b1e08, Borda #d4a373 e Links #f3c4fb.
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #3b1e08; /* Tom castanho escuro do Header */
+    color: #ffffff;            /* Texto branco para leitura clara */
+    margin-top: 40px;
+    border-top: 3px solid #d4a373; /* Borda dourada igual à do Header */
+}
+
+/* Caixa com a linha superior (Área Académica) */
+.rodape-projeto {
+    margin-top: 20px;
+    border-top: 1px solid #d4a373; /* Divisória em tom dourado */
+    padding-top: 15px;
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* Links do PDF e GitHub (Rosa do título do Header) */
+.rodape-projeto a {
+    color: #f3c4fb;
+    text-decoration: underline;
+}
+
+.rodape-projeto a:hover {
+    color: #d4a373; /* Efeito hover igual ao menu */
+}
+
+/* Link de "Voltar ao topo" */
+footer a[href="#topo"] {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a[href="#topo"]:hover {
+    color: #f3c4fb;
+}
+header nav {
+    display: flex;
+    justify-content: flex-end; /* Empurra os itens para a direita */
+    align-items: center;
+    width: 100%;
+}

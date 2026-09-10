@@ -1,0 +1,27 @@
+
+        h1 {
+            color: blue;
+            font-family: Arial;
+            font-size: 12pt;
+        }
+        p {
+            color: red;
+            font-size: 12pt;
+            border: 1px solid red;
+        }
+        img {
+            width: 200px;
+            height: 120px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        caption {
+            font-weight: bold;
+            font-size: 18px;
+        }
