@@ -533,3 +533,501 @@ header nav {
     align-items: center;
     width: 100%;
 }
+/* ===================================================
+   RESPONSIVIDADE (Ajustes para Telemóvel)
+   =================================================== */
+
+@media (max-width: 768px) {
+    /* 1. Reorganização do Cabeçalho e Menu */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 8px;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* 2. Contentor Principal Ajustável */
+    .container, main {
+        width: 92% !important;
+        margin: 10px auto !important;
+        padding: 15px !important;
+    }
+
+    /* 3. Imagens, Vídeos e Áudio Flexíveis */
+    img, video, audio {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* 4. Galeria em Coluna Única */
+    .galeria, .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    /* 5. Tabela de Curvaturas com Rolagem Lateral */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    /* 6. Formulário de Diagnóstico Capilar */
+    form {
+        width: 100% !important;
+    }
+
+    .checkbox-group, fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+/* Estilização do link de Download do PDF no rodapé */
+footer a[href$=".pdf"],
+footer a {
+    color: #f4a261 !important; /* Laranja/dourado bem visível sobre o fundo escuro */
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o rato (Hover) */
+footer a[href$=".pdf"]:hover,
+footer a:hover {
+    color: #ffffff !important; /* Fica branco brilhante ao passar o rato */
+}
+/* Tamanho aumentado dos inputs e combo boxes */
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo-inline select {
+  width: 100%;
+  padding: 10px 12px; /* Caixa mais alta e confortável */
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Ajuste dos seletores lado a lado */
+.form-grupo-inline {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-grupo-inline > div {
+  flex: 1;
+}
+
+/* Grelha perfeitamente alinhada para as checkboxes */
+.grid-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 12px 15px;
+  margin-top: 10px;
+}
+
+.grid-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Aumentar o tamanho do quadradinho da checkbox */
+.grid-checkboxes input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Responsividade para telemóveis */
+@media (max-width: 768px) {
+  .form-grupo-inline {
+    flex-direction: column;
+  }
+  .grid-checkboxes {
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna no telemóvel */
+  }
+}
+/* Container do Formulário */
+.form-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-header h2 {
+  color: #3b1e08;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.form-secao {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0e6df;
+}
+
+.secao-titulo {
+  font-size: 18px;
+  color: #d4a373;
+  margin-bottom: 15px;
+}
+
+/* Grids de Inputs */
+.grid-campos-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-grupo label {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.form-grupo input,
+.form-grupo select {
+  padding: 12px;
+  font-size: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus {
+  border-color: #d4a373;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+}
+
+/* Cards Interativos para as Checkboxes */
+.grid-checkboxes-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.checkbox-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  background: #faf7f5;
+  border: 2px solid #e8dfd8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkbox-card:hover {
+  border-color: #d4a373;
+  background: #fdfaf7;
+}
+
+/* Estilo do Card quando selecionado */
+.checkbox-card:has(input:checked) {
+  border-color: #d4a373;
+  background: #fff8f0;
+  box-shadow: 0 2px 8px rgba(212, 163, 115, 0.25);
+}
+
+.checkbox-card input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: #d4a373;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content strong {
+  font-size: 14px;
+  color: #3b1e08;
+}
+
+.card-content small {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+/* Aviso de validação */
+.aviso-checkbox {
+  background: #ffe6e6;
+  color: #cc0000;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Botões */
+.botoes-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.btn-submit {
+  flex: 2;
+  padding: 14px;
+  background: #3b1e08;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-submit:hover {
+  background: #5a2e0c;
+}
+
+.btn-reset {
+  flex: 1;
+  padding: 14px;
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-reset:hover {
+  background: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-campos-2 {
+    grid-template-columns: 1fr;
+  }
+  .grid-checkboxes-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/* 1. Alarga o container branco de fundo */
+.form-container, 
+#diagnostico-capilar {
+  max-width: 1100px !important; /* Aumenta a largura total */
+  width: 92%;                   /* Ocupa 92% da tela em monitores maiores */
+  margin: 30px auto;
+  padding: 40px;
+}
+
+/* 2. Ajusta as colunas dos cards para aproveitarem a nova largura */
+.grid-checkboxes-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 18px;
+}
+/* Aumento global do tamanho de fonte e espaçamento */
+html {
+  font-size: 18px; /* Aumenta o tamanho base (o padrão dos navegadores é 16px) */
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Ajustes nos Títulos */
+h1 { font-size: 2.4rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+p, li, label, input, select {
+  font-size: 1.05rem; /* Leitura mais clara e visível */
+}
+/* Aumento global de fonte */
+html {
+  font-size: 18px;
+}
+
+.carrossel-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 10px;
+}
+
+/* Estrutura do Card com rotação 3D */
+.card-flip {
+  min-width: 280px;
+  height: 350px;
+  perspective: 1000px;
+  background: transparent;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Roda o cartão ao passar o rato (hover) */
+.card-flip:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Frente do Cartão (Imagem + Nome) */
+.card-front {
+  background-color: #fff;
+}
+
+.card-front img {
+  width: 100%;
+  height: 82%;
+  object-fit: cover;
+}
+
+.card-front-title {
+  height: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #3b1e08;
+  font-size: 1.05rem;
+}
+
+/* Verso do Cartão (Aparece ao passar o rato) */
+.card-back {
+  background-color: #3b1e08;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-back h3 {
+  color: #d4a373;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.card-back p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+/* 1. Garante que o container do card e o verso fiquem configurados corretamente */
+.card-flip {
+  min-width: 280px;
+  height: 360px;
+  perspective: 1000px;
+  background: transparent;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+}
+
+.card-flip:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 2. PROPRIEDADE CHAVE: Esconde o lado que fica de costas */
+.card-front, .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Obrigatorio para Safari e Chrome */
+  backface-visibility: hidden;        /* Impede que a frente tape o texto do verso */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Lado da Frente */
+.card-front {
+  background-color: #ffffff;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+/* Lado do Verso (Onde fica a curiosidade) */
+.card-back {
+  background-color: #3b1e08;
+  color: #ffffff;
+  transform: rotateY(180deg); /* Vira o texto para a posicao correta */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-back h3 {
+  color: #d4a373;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.card-back p {
+  color: #fdfbf7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}

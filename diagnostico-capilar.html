@@ -1,155 +1,356 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnóstico Capilar - Crespo & Glow</title>
+    <title>Document</title>
     <link rel="stylesheet" href="Style/afro.css">
 </head>
 <body>
-
     <header id="topo">
-        <h1>Crespo & Glow</h1>
-        <nav aria-label="Navegação Principal">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="sobre_nos.html">Sobre</a></li>
-                <li><a href="guia_crespo.html">Guia Crespo</a></li>
-                <li><a href="diagnostico-capilar.html" class="ativo">Diagnóstico Capilar</a></li>
-                <li><a href="fale_connosco.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
+     <h1>Crespo & Glow</h1>
+    <nav aria-label="Navegação Principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre_nos.html">Sobre</a></li>
+            <li><a href="guia_crespo.html">Guia Crespo</a></li>
+            <!-- LINK ADICIONADO AQUI -->
+            <li><a href="#diagnostico-capilar.html" class="ativo">Diagnóstico Capilar</a></li>
+            <li><a href="fale_connosco.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
     <main>
-        <section id="diagnostico-capilar" class="form-container">
-            <h2>Qual cuidado o teu cabelo precisa?</h2>
-            <p>Preenche os teus dados e seleciona os desafios do teu cabelo para receberes um diagnóstico personalizado.</p>
+  <section id="diagnostico-capilar" class="form-container">
+    <div class="form-header">
+      <h2>Qual cuidado o teu cabelo precisa?</h2>
+      <p>Preenche os teus dados e seleciona os desafios do teu cabelo para receberes um diagnóstico personalizado.</p>
+    </div>
 
-            <form id="formCabelo" onsubmit="gerarDiagnostico(event)">
-                <div class="form-grupo">
-                    <label for="nome">Nome *</label>
-                    <input type="text" id="nome" required placeholder="O teu nome">
-                </div>
+    <form id="formCabelo" onsubmit="gerarDiagnostico(event)">
+      
+      <!-- SEÇÃO 1: DADOS PESSOAIS -->
+      <div class="form-secao">
+        <h3 class="secao-titulo">1. Dados Pessoais</h3>
+        <div class="grid-campos-2">
+          <div class="form-grupo">
+            <label for="nome">Nome Completo *</label>
+            <input type="text" id="nome" required placeholder="Ex: Nhemuka Langa">
+          </div>
 
-                <div class="form-grupo">
-                    <label for="email">E-mail *</label>
-                    <input type="email" id="email" required placeholder="O teu e-mail">
-                </div>
+          <div class="form-grupo">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" required placeholder="exemplo@email.com">
+          </div>
+        </div>
+      </div>
 
-                <div class="form-grupo-inline">
-                    <div>
-                        <label for="curvatura">Curvatura do Cabelo *</label>
-                        <select id="curvatura" required>
-                            <option value="">Seleciona...</option>
-                            <option value="4A">4A</option>
-                            <option value="4B">4B</option>
-                            <option value="4C">4C</option>
-                            <option value="4A & 4B">4A & 4B</option>
-                            <option value="4B & 4C">4B & 4C</option>
-                            <option value="4A & 4B & 4C">4A & 4B & 4C</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="tipo">Tipo de Cabelo *</label>
-                        <select id="tipo" required>
-                            <option value="">Seleciona...</option>
-                            <option value="Natural">Natural</option>
-                            <option value="Com coloração">Com coloração</option>
-                            <option value="Com química">Com química</option>
-                        </select>
-                    </div>
-                </div>
+      <!-- SEÇÃO 2: PERFIL CAPILAR -->
+      <div class="form-secao">
+        <h3 class="secao-titulo">2. Perfil Capilar</h3>
+        <div class="grid-campos-2">
+          <div class="form-grupo">
+            <label for="curvatura">Curvatura do Cabelo *</label>
+            <select id="curvatura" required>
+              <option value="">Seleciona a curvatura...</option>
+              <option value="4A">4A - Crespo Ondulado</option>
+              <option value="4B">4B - Crespo em Z</option>
+              <option value="4C">4C - Crespo Muito Encaracolado</option>
+              <option value="4A & 4B">Mistura 4A & 4B</option>
+              <option value="4B & 4C">Mistura 4B & 4C</option>
+              <option value="4A & 4B & 4C">Múltiplas Curvaturas (4A, 4B, 4C)</option>
+            </select>
+          </div>
 
-                <fieldset class="problemas-container">
-                    <legend>Seleciona os teus problemas capilares *</legend>
-                    <p class="aviso-checkbox" id="avisoCheckbox" style="display: none; color: red;">Por favor, seleciona pelo menos uma opção.</p>
-                    
-                    <div class="grid-checkboxes">
-                        <label><input type="checkbox" name="problemas" value="seco"> Cabelo seco</label>
-                        <label><input type="checkbox" name="problemas" value="frizz"> Frizz</label>
-                        <label><input type="checkbox" name="problemas" value="definicao"> Falta de definição</label>
-                        <label><input type="checkbox" name="problemas" value="quebra"> Quebra dos fios</label>
-                        <label><input type="checkbox" name="problemas" value="ressecamento"> Ressecamento</label>
-                        <label><input type="checkbox" name="problemas" value="brilho"> Falta de brilho</label>
-                        <label><input type="checkbox" name="problemas" value="crescimento"> Dificuldade no crescimento</label>
-                        <label><input type="checkbox" name="problemas" value="embaracamento"> Embaraçamento</label>
-                    </div>
-                </fieldset>
+          <div class="form-grupo">
+            <label for="tipo">Estado Atual do Cabelo *</label>
+            <select id="tipo" required>
+              <option value="">Seleciona o estado...</option>
+              <option value="Natural">Natural (Sem Química)</option>
+              <option value="Com coloração">Com Coloração / Descoloração</option>
+              <option value="Com química">Com Química / Alisamento</option>
+              <option value="Em transição">Em Transição Capilar</option>
+              <option value="Com tranças/Proteção">Com Tranças / Penteado Protetor</option>
+            </select>
+          </div>
+        </div>
+      </div>
 
-                <div class="botoes-form">
-                    <button type="submit" class="btn-submit">Ver solução</button>
-                    <button type="reset" class="btn-reset" onclick="limparResultado()">Limpar formulário</button>
-                </div>
-            </form>
+      <!-- SEÇÃO 3: DIAGNÓSTICO E DESAFIOS -->
+      <div class="form-secao">
+        <h3 class="secao-titulo">3. Principais Desafios</h3>
+        <p class="instrucao-selecao">Seleciona todos os problemas que afetam o teu cabelo atualmente:</p>
+        
+        <p class="aviso-checkbox" id="avisoCheckbox" style="display: none;">Por favor, seleciona pelo menos uma opção para gerar o diagnóstico.</p>
 
-            <div id="resultadoDiagnostico" class="resultado-box" style="display: none; margin-top: 20px;"></div>
-        </section>
-    </main>
+        <div class="grid-checkboxes-cards">
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="seco">
+            <span class="card-content">
+              <strong>Cabelo Seco</strong>
+              <small>Falta de humidade natural</small>
+            </span>
+          </label>
 
-    <footer style="text-align: center; padding: 20px; margin-top: 40px; background-color: #3b1e08; color: #fff;">
-        <p>&copy; 2026 Crespo & Glow - Todos os direitos reservados.</p>
-        <p><a href="#topo" style="color: #fff; text-decoration: none;">Voltar ao topo </a></p>
-    </footer>
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="frizz">
+            <span class="card-content">
+              <strong>Frizz Excessivo</strong>
+              <small>Fios arrepiados e desalinhados</small>
+            </span>
+          </label>
 
-    <script>
-        const recomendacoes = {
-            seco: "Recomendar uma rotina de hidratação regular, utilizando produtos adequados para cabelos crespos e mantendo uma boa rotina de cuidados.",
-            frizz: "Recomendar técnicas de finalização e produtos que ajudem a manter a hidratação e a definição dos fios.",
-            definicao: "Recomendar técnicas de finalização, como fitagem, e produtos adequados à curvatura do cabelo.",
-            quebra: "Recomendar cuidados mais suaves, evitar manipulação excessiva e manter o cabelo hidratado e protegido.",
-            ressecamento: "Recomendar hidratação e nutrição regulares, além de evitar práticas que retirem excessivamente a hidratação dos fios.",
-            brilho: "Recomendar uma rotina equilibrada de hidratação e nutrição e cuidados que ajudem a manter os fios saudáveis.",
-            crescimento: "Explicar que o crescimento depende de vários fatores e recomendar cuidados para reduzir a quebra e manter o couro cabeludo e os fios bem cuidados.",
-            embaracamento: "Recomendar desembaraçar suavemente, de preferência com o cabelo húmido e com um produto que facilite o processo."
-        };
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="definicao">
+            <span class="card-content">
+              <strong>Falta de Definição</strong>
+              <small>Dificuldade em manter os caracóis</small>
+            </span>
+          </label>
 
-        function gerarDiagnostico(event) {
-            event.preventDefault();
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="quebra">
+            <span class="card-content">
+              <strong>Quebra dos Fios</strong>
+              <small>Fios frágeis que partem facilmente</small>
+            </span>
+          </label>
 
-            const nome = document.getElementById('nome').value;
-            const curvatura = document.getElementById('curvatura').value;
-            const tipo = document.getElementById('tipo').value;
-            const checkboxes = document.querySelectorAll('input[name="problemas"]:checked');
-            const avisoCheckbox = document.getElementById('avisoCheckbox');
-            const resultadoBox = document.getElementById('resultadoDiagnostico');
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="ressecamento">
+            <span class="card-content">
+              <strong>Ressecamento Severo</strong>
+              <small>Cabelo áspero e sem vida</small>
+            </span>
+          </label>
 
-            if (checkboxes.length === 0) {
-                avisoCheckbox.style.display = 'block';
-                return;
-            } else {
-                avisoCheckbox.style.display = 'none';
-            }
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="brilho">
+            <span class="card-content">
+              <strong>Falta de Brilho</strong>
+              <small>Aspeto opaco e sem luminosidade</small>
+            </span>
+          </label>
 
-            let html = `<h3>Diagnóstico Capilar para ${nome}</h3>`;
-            html += `<p><strong>Perfil:</strong> Curvatura ${curvatura} | Tipo: ${tipo}</p><hr style="margin: 15px 0; border-color: #d4a373;">`;
-            html += `<h4>Recomendações Personalizadas:</h4>`;
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="crescimento">
+            <span class="card-content">
+              <strong>Lento Crescimento</strong>
+              <small>Sensação de que o cabelo não cresce</small>
+            </span>
+          </label>
 
-            checkboxes.forEach(cb => {
-                const chave = cb.value;
-                const textoProblema = cb.parentElement.textContent.trim();
-                if (recomendacoes[chave]) {
-                    html += `
-                        <div style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #d4a373;">
-                            <p><strong>• ${textoProblema}:</strong> ${recomendacoes[chave]}</p>
-                        </div>
-                    `;
-                }
-            });
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="embaracamento">
+            <span class="card-content">
+              <strong>Embaraçamento</strong>
+              <small>Nós constantes e dificuldade ao pentear</small>
+            </span>
+          </label>
 
-            resultadoBox.innerHTML = html;
-            resultadoBox.style.display = 'block';
-            resultadoBox.scrollIntoView({ behavior: 'smooth' });
-        }
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="caspa">
+            <span class="card-content">
+              <strong>Caspa / Descamação</strong>
+              <small>Sensibilidade no couro cabeludo</small>
+            </span>
+          </label>
 
-        function limparResultado() {
-            const resultadoBox = document.getElementById('resultadoDiagnostico');
-            const avisoCheckbox = document.getElementById('avisoCheckbox');
-            resultadoBox.style.display = 'none';
-            resultadoBox.innerHTML = '';
-            avisoCheckbox.style.display = 'none';
-        }
-    </script>
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="porosidade">
+            <span class="card-content">
+              <strong>Alta Porosidade</strong>
+              <small>Absorve água rápido mas perde logo</small>
+            </span>
+          </label>
 
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="queda">
+            <span class="card-content">
+              <strong>Queda Capilar</strong>
+              <small>Perda de fios desde a raiz</small>
+            </span>
+          </label>
+
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="pontas">
+            <span class="card-content">
+              <strong>Pontas Duplas</strong>
+              <small>Pontas espigadas e danificadas</small>
+            </span>
+          </label>
+
+        </div>
+        <!-- NOVO CARD: OUTRO PROBLEMA -->
+          <label class="checkbox-card">
+            <input type="checkbox" name="problemas" value="outro" id="chkOutro" onchange="toggleOutroInput()">
+            <span class="card-content">
+              <strong>Outro Problema</strong>
+              <small>Especifica o teu desafio</small>
+            </span>
+          </label>
+        </div> <!-- FECHO DA grid-checkboxes-cards -->
+
+        <!-- CAMPO DE TEXTO ESCONDIDO QUE APARECE QUANDO SELECIONADO -->
+        <div id="boxOutroTexto" style="display: none; margin-top: 15px;">
+          <label for="outroProblemaTexto" style="font-weight: bold; font-size: 14px; color: #3b1e08;">
+            Descreve o teu problema capilar:
+          </label>
+          <input type="text" id="outroProblemaTexto" placeholder="Outro..." style="width: 100%; padding: 12px; margin-top: 5px; border: 1.5px solid #d4a373; border-radius: 8px; box-sizing: border-box;">
+        </div>
+      </div> <!-- FECHO DA form-secao (SEÇÃO 3) -->
+      </div>
+
+      <!-- BOTÕES -->
+      <div class="botoes-form">
+        <button type="submit" class="btn-submit">Gerar Diagnóstico Personalizado</button>
+        <button type="reset" class="btn-reset" onclick="limparResultado()">Limpar</button>
+      </div>
+    </form>
+
+    <div id="resultadoDiagnostico" class="resultado-box" style="display: none;"></div>
+  </section>
+</main>
+
+<script>
+  const recomendacoes = {
+    seco: "Recomendar uma rotina de hidratação regular, utilizando produtos adequados para cabelos crespos e mantendo uma boa rotina de cuidados.",
+    frizz: "Recomendar técnicas de finalização e produtos que ajudem a manter a hidratação e a definição dos fios.",
+    definicao: "Recomendar técnicas de finalização, como fitagem, e produtos adequados à curvatura do cabelo.",
+    quebra: "Recomendar cuidados mais suaves, evitar manipulação excessiva e manter o cabelo hidratado e protegido.",
+    ressecamento: "Recomendar hidratação e nutrição regulares, além de evitar práticas que retirem excessivamente a hidratação dos fios.",
+    brilho: "Recomendar uma rotina equilibrada de hidratação e nutrição e cuidados que ajudem a manter os fios saudáveis.",
+    crescimento: "Explicar que o crescimento depende de vários fatores e recomendar cuidados para reduzir a quebra e manter o couro cabeludo e os fios bem cuidados.",
+    embaracamento: "Recomendar desembaraçar suavemente, de preferência com o cabelo húmido e com um produto que facilite o processo.",
+    /* RECOMENDAÇÕES PARA AS NOVAS OPÇÕES */
+    caspa: "Recomendar o uso de champôs esfoliantes suaves ou anticaspa sem sulfatos agressivos e manter a higienização do couro cabeludo em dia.",
+    porosidade: "Recomendar tratamentos de reconstrução capilar ricos em queratina e selamento de cutículas com óleos vegetais.",
+    queda: "Recomendar massagens estimulantes no couro cabeludo com óleos naturais e consulta com um especialista caso a queda persista.",
+    pontas: "Recomendar o reparador de pontas diário e um corte terapêutico para eliminar as pontas duplas sem retirar comprimento."
+  };
+
+  function gerarDiagnostico(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const curvatura = document.getElementById('curvatura').value;
+    const tipo = document.getElementById('tipo').value;
+    const checkboxes = document.querySelectorAll('input[name="problemas"]:checked');
+    const avisoCheckbox = document.getElementById('avisoCheckbox');
+    const resultadoBox = document.getElementById('resultadoDiagnostico');
+
+    if (checkboxes.length === 0) {
+      avisoCheckbox.style.display = 'block';
+      return;
+    } else {
+      avisoCheckbox.style.display = 'none';
+    }
+
+    let html = `<h3>Diagnóstico Capilar para ${nome}</h3>`;
+    html += `<p><strong>Perfil:</strong> Curvatura ${curvatura} | Tipo: ${tipo}</p><hr style="margin: 15px 0; border-color: #d4a373;">`;
+    html += `<h4>Recomendações Personalizadas:</h4>`;
+
+    checkboxes.forEach(cb => {
+      const chave = cb.value;
+      const textoProblema = cb.parentElement.textContent.trim();
+      if (recomendacoes[chave]) {
+        html += `
+          <div style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #d4a373;">
+            <p><strong>• ${textoProblema}:</strong> ${recomendacoes[chave]}</p>
+          </div>
+        `;
+      }
+    });
+
+    resultadoBox.innerHTML = html;
+    resultadoBox.style.display = 'block';
+    resultadoBox.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function limparResultado() {
+    const resultadoBox = document.getElementById('resultadoDiagnostico');
+    const avisoCheckbox = document.getElementById('avisoCheckbox');
+    resultadoBox.style.display = 'none';
+    resultadoBox.innerHTML = '';
+    avisoCheckbox.style.display = 'none';
+  }
+  // Função para mostrar/esconder o campo de texto ao marcar "Outro"
+function toggleOutroInput() {
+  const chkOutro = document.getElementById('chkOutro');
+  const boxOutroTexto = document.getElementById('boxOutroTexto');
+  
+  if (chkOutro.checked) {
+    boxOutroTexto.style.display = 'block';
+  } else {
+    boxOutroTexto.style.display = 'none';
+    document.getElementById('outroProblemaTexto').value = '';
+  }
+}
+
+// Função de geração do Diagnóstico atualizada
+function gerarDiagnostico(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById('nome').value;
+  const curvatura = document.getElementById('curvatura').value;
+  const tipo = document.getElementById('tipo').value;
+  const checkboxes = document.querySelectorAll('input[name="problemas"]:checked');
+  const avisoCheckbox = document.getElementById('avisoCheckbox');
+  const resultadoBox = document.getElementById('resultadoDiagnostico');
+
+  if (checkboxes.length === 0) {
+    avisoCheckbox.style.display = 'block';
+    return;
+  } else {
+    avisoCheckbox.style.display = 'none';
+  }
+
+  let html = `<h3>Diagnóstico Capilar para ${nome}</h3>`;
+  html += `<p><strong>Perfil:</strong> Curvatura ${curvatura} | Tipo: ${tipo}</p><hr style="margin: 15px 0; border-color: #d4a373;">`;
+  html += `<h4>Recomendações Personalizadas:</h4>`;
+
+  checkboxes.forEach(cb => {
+    const chave = cb.value;
+
+    if (chave === 'outro') {
+      const textoDigitado = document.getElementById('outroProblemaTexto').value.trim();
+      const nomeDoProblema = textoDigitado !== "" ? textoDigitado : "Outro problema especificado";
+      
+      html += `
+        <div style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #d4a373;">
+          <p><strong>• ${nomeDoProblema}:</strong> Recomendar uma avaliação detalhada e adaptação dos produtos conforme a resposta do teu fios e couro cabeludo.</p>
+        </div>
+      `;
+    } else if (recomendacoes[chave]) {
+      const textoProblema = cb.parentElement.querySelector('strong').textContent.trim();
+      html += `
+        <div style="margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #d4a373;">
+          <p><strong>• ${textoProblema}:</strong> ${recomendacoes[chave]}</p>
+        </div>
+      `;
+    }
+  });
+
+  resultadoBox.innerHTML = html;
+  resultadoBox.style.display = 'block';
+  resultadoBox.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Ajuste na função de limpar
+function limparResultado() {
+  const resultadoBox = document.getElementById('resultadoDiagnostico');
+  const avisoCheckbox = document.getElementById('avisoCheckbox');
+  const boxOutroTexto = document.getElementById('boxOutroTexto');
+  
+  resultadoBox.style.display = 'none';
+  resultadoBox.innerHTML = '';
+  if (avisoCheckbox) avisoCheckbox.style.display = 'none';
+  if (boxOutroTexto) boxOutroTexto.style.display = 'none';
+}
+</script>
+<footer>
+        <p>&copy; 2026 Crespo & Glow</p>
+        <a href="#topo">Voltar ao topo </a>
+    </footer> 
 </body>
 </html>
