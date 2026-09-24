@@ -1031,3 +1031,82 @@ html {
   line-height: 1.5;
   margin: 0;
 }
+/* ===================================================
+   AJUSTES PARA DISPOSITIVOS MÓVEIS (TELEMÓVEIS)
+   =================================================== */
+
+@media (max-width: 768px) {
+  
+  /* 1. Ajuste Geral de Espaçamentos */
+  body {
+    padding: 10px;
+    font-size: 16px; /* Ajusta o tamanho do texto para leitura confortável */
+  }
+
+  /* 2. Menu de Navegação */
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  /* 3. Secção Hero (Topo da Página Inicial) */
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .logo-grande {
+    max-width: 180px; /* Impede a logo de estourar a tela */
+    height: auto;
+  }
+
+  /* 4. Galeria de Cartões 3D */
+  .carrossel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-flip {
+    width: 100% !important;
+    max-width: 320px;
+    height: 380px; /* Garante altura suficiente para o texto do verso */
+  }
+
+  /* 5. Formulário de Diagnóstico Capilar */
+  .form-container, 
+  #diagnostico-capilar {
+    width: 95% !important;
+    padding: 20px 15px !important;
+  }
+
+  .grid-campos-2 {
+    grid-template-columns: 1fr !important; /* Coloca os inputs um por baixo do outro */
+  }
+
+  .grid-checkboxes-cards {
+    grid-template-columns: 1fr !important; /* Exibe 1 card por linha */
+  }
+
+  .botoes-form {
+    flex-direction: column; /* Botões empilhados */
+  }
+
+  .btn-submit, .btn-reset {
+    width: 100%;
+  }
+
+  /* 6. Ajuste de Vídeos e Tabela */
+  .video-container video {
+    width: 100% !important;
+    height: auto;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto; /* Permite rolar a tabela para o lado no celular */
+    white-space: nowrap;
+  }
+}
