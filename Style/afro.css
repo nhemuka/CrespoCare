@@ -1032,81 +1032,80 @@ html {
   margin: 0;
 }
 /* ===================================================
-   AJUSTES PARA DISPOSITIVOS MÓVEIS (TELEMÓVEIS)
+   CORREÇÃO VISUAL PARA TELEMÓVEL (MENU E HERO)
    =================================================== */
 
 @media (max-width: 768px) {
   
-  /* 1. Ajuste Geral de Espaçamentos */
+  /* 1. Ajuste de fontes e margens gerais */
+  html {
+    font-size: 15px !important; /* Reduz a escala base no telemóvel */
+  }
+
   body {
-    padding: 10px;
-    font-size: 16px; /* Ajusta o tamanho do texto para leitura confortável */
+    padding: 0;
+    margin: 0;
   }
 
-  /* 2. Menu de Navegação */
+  /* 2. Menu de Navegação compacto */
   header nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    padding: 12px 10px;
+    margin: 0;
   }
 
-  /* 3. Secção Hero (Topo da Página Inicial) */
+  header nav a {
+    font-size: 0.9rem !important;
+    padding: 6px 12px !important;
+  }
+
+  /* 3. Hero Section (Topo) alinhado e compacto */
   .hero-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 10px;
-  }
-
-  .logo-grande {
-    max-width: 180px; /* Impede a logo de estourar a tela */
-    height: auto;
-  }
-
-  /* 4. Galeria de Cartões 3D */
-  .carrossel-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  .card-flip {
-    width: 100% !important;
-    max-width: 320px;
-    height: 380px; /* Garante altura suficiente para o texto do verso */
-  }
-
-  /* 5. Formulário de Diagnóstico Capilar */
-  .form-container, 
-  #diagnostico-capilar {
-    width: 95% !important;
+    text-align: center;
     padding: 20px 15px !important;
+    gap: 15px;
   }
 
-  .grid-campos-2 {
-    grid-template-columns: 1fr !important; /* Coloca os inputs um por baixo do outro */
-  }
-
-  .grid-checkboxes-cards {
-    grid-template-columns: 1fr !important; /* Exibe 1 card por linha */
-  }
-
-  .botoes-form {
-    flex-direction: column; /* Botões empilhados */
-  }
-
-  .btn-submit, .btn-reset {
-    width: 100%;
-  }
-
-  /* 6. Ajuste de Vídeos e Tabela */
-  .video-container video {
-    width: 100% !important;
+  /* Reduz e centra o Logótipo */
+  .hero-logo-lado-esquerdo img,
+  .logo-grande {
+    max-width: 100px !important; /* Tamanho pequeno e discreto */
     height: auto;
+    margin: 0 auto;
   }
 
-  table {
-    display: block;
-    overflow-x: auto; /* Permite rolar a tabela para o lado no celular */
-    white-space: nowrap;
+  /* Ajuste dos Títulos para não ficarem gigantes */
+  .hero-info-lado-direito h1 {
+    font-size: 1.8rem !important; /* "Crespo & Glow" */
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+
+  .hero-info-lado-direito h2 {
+    font-size: 1.1rem !important; /* "Valorização & Cuidados..." */
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    color: #d4a373; /* Cor Dourado Avelã */
+  }
+
+  .hero-info-lado-direito p {
+    font-size: 0.9rem !important;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  .btn-explorar {
+    display: inline-block;
+    padding: 8px 18px !important;
+    font-size: 0.9rem !important;
+    margin-top: 10px;
   }
 }
